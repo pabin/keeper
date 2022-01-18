@@ -1,6 +1,7 @@
 package com.keeper;
 
 import com.facebook.react.ReactActivity;
+import android.os.Bundle; // react-native-screens
 
 public class MainActivity extends ReactActivity {
 
@@ -11,5 +12,13 @@ public class MainActivity extends ReactActivity {
   @Override
   protected String getMainComponentName() {
     return "keeper";
+  }
+
+  /**
+   * configuration for react-native-screens
+   */
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
   }
 }
