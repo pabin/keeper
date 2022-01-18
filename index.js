@@ -3,15 +3,20 @@
  */
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { AppRegistry } from 'react-native';
+import { AppRegistry, StatusBar, useColorScheme } from 'react-native';
 
 import App from './App';
 import { name as appName } from './app.json';
 
-const keeperApp = () => (
-  <NavigationContainer>
-    <App />
-  </NavigationContainer>
-);
+const KeeperApp = () => {
+  const isDarkMode = useColorScheme() === 'dark';
 
-AppRegistry.registerComponent(appName, () => keeperApp);
+  return (
+    <NavigationContainer>
+      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <App />
+    </NavigationContainer>
+  );
+};
+
+AppRegistry.registerComponent(appName, () => KeeperApp);

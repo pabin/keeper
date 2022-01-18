@@ -9,35 +9,14 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  useColorScheme,
-} from 'react-native';
 
-import { Colors } from 'react-native/Libraries/NewAppScreen';
-
-import NoteList from './src/screens/NoteList';
+import TabNavigator from './src/navigation/TabNavigation';
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-  // const isDarkMode = true;
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}
-      >
-        <NoteList />
-      </ScrollView>
-    </SafeAreaView>
+    <>
+      <TabNavigator />
+    </>
   );
 };
 

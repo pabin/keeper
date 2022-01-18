@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-const NoteListScreen = () => {
+const ArchivedNotesScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>Hello, from note list screen</Text>
+      <Text>Hello, from archived notes screen</Text>
     </View>
   );
 };
@@ -17,4 +17,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NoteListScreen;
+export default ArchivedNotesScreen;
