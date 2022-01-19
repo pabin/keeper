@@ -1,20 +1,21 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { colors } from '../../styles/colors';
 
-const NoteItem = ({ note, navigation }) => {
+const NoteDetail = ({ route }) => {
+  const { note } = route.params;
+
   return (
-    <TouchableOpacity
-      style={styles.container}
-      onPress={() => navigation.navigate('NoteDetail', { note })}
-    >
+    <View style={styles.container}>
       <Text>{note.title}</Text>
-    </TouchableOpacity>
+      <Text>{note.detail}</Text>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     padding: 8,
     margin: 8,
     alignItems: 'center',
@@ -23,4 +24,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NoteItem;
+export default NoteDetail;

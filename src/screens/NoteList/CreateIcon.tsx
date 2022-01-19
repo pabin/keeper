@@ -1,22 +1,33 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import Icon from 'react-native-vector-icons/dist/FontAwesome';
+
 import { colors } from '../../styles/colors';
 
-const CreateIcon = ({ note }) => {
+const CreateIcon = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text>{note.title}</Text>
+      <Icon
+        onPress={() => navigation.navigate('CreateNotes')}
+        name="plus"
+        size={24}
+        color={colors.white}
+      />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    padding: 8,
-    margin: 8,
+    width: 60,
+    height: 60,
+    bottom: 24,
+    right: 24,
+    borderRadius: 30,
     alignItems: 'center',
-    justifyContent: 'space-between',
-    backgroundColor: colors.blueGrey300,
+    justifyContent: 'center',
+    position: 'absolute',
+    backgroundColor: colors.lightBlue900,
   },
 });
 

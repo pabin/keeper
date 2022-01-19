@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import { storeObjectData } from '../../model/StorageUtils';
@@ -11,32 +11,65 @@ const CreateNoteScreen = () => {
       {
         id: 1,
         title: 'this is note title 1',
-        details: 'other details',
-        date: new Date(),
+        body: 'other details',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        isFavourite: true,
+        isArchived: false,
       },
       {
         id: 2,
         title: 'this is note title 2',
-        details: 'other details',
-        date: new Date(),
+        body: 'other details',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        isFavourite: false,
+        isArchived: true,
       },
       {
         id: 3,
         title: 'this is note title 3',
-        details: 'other details',
-        date: new Date(),
+        body: 'other details',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        isFavourite: true,
+        isArchived: true,
       },
       {
         id: 4,
         title: 'this is note title 4',
-        details: 'other details',
-        date: new Date(),
+        body: 'other details',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        isFavourite: false,
+        isArchived: true,
       },
       {
         id: 5,
         title: 'this is note title 5',
-        details: 'other details',
-        date: new Date(),
+        body: 'other details',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        isFavourite: false,
+        isArchived: true,
+      },
+      {
+        id: 6,
+        title: 'this is note title 6',
+        body: 'other details',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        isFavourite: true,
+        isArchived: false,
+      },
+      {
+        id: 7,
+        title: 'this is note title 7',
+        body: 'other details',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        isFavourite: false,
+        isArchived: true,
       },
     ];
 

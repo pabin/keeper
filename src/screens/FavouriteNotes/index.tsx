@@ -1,10 +1,35 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, View } from 'react-native';
 
-const FavouriteNotesScreen = () => {
+import { getText } from '../../assets/i18n';
+import Message from '../../components/Message';
+import { getObjectData } from '../../model/StorageUtils';
+import NoteItem from '../NoteList/NoteItem';
+
+const FavouriteNotesScreen = ({ navigation }) => {
+  const [favouriteNotes, setFavouriteNotes] = useState([]);
+
+  const getDatabase = async () => {
+    const notesData = await getObjectData('notes');
+    if (notesData) {
+      const favourites = notesData.filter(note => note.isFavourite);
+      setFavouriteNotes(favourites);
+    }
+  };
+
+  useEffect(() => {
+    getDatabase();
+  }, []);
+
   return (
     <View style={styles.container}>
-      <Text>Hello, from favourite notes screen</Text>
+      {favouriteNotes.length ? (
+        favouriteNotes.map(note => (
+          <NoteItem key={note.id} note={note} navigation={navigation} />
+        ))
+      ) : (
+        <Message type="info" message={getText('subMessage.sub')} />
+      )}
     </View>
   );
 };
@@ -12,8 +37,6 @@ const FavouriteNotesScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 });
 

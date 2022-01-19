@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import I18n, { getText } from '../../assets/i18n';
+import { StyleSheet, View } from 'react-native';
+import { getText } from '../../assets/i18n';
 import Message from '../../components/Message';
 
 import { getObjectData } from '../../model/StorageUtils';
+import CreateIcon from './CreateIcon';
 import NoteItem from './NoteItem';
 
-const NoteListScreen = () => {
+const NoteListScreen = ({ navigation }) => {
   const [notes, setNotes] = useState([]);
   const getDatabase = async () => {
     const notesData = await getObjectData('notes');
@@ -21,24 +22,23 @@ const NoteListScreen = () => {
 
   console.log('notes', notes);
 
-  if (notes.length) {
-    return (
-      <View style={styles.container}>
-        {notes.map(note => (
-          <NoteItem key={note.id} note={note} />
-        ))}
-      </View>
-    );
-  } else {
-    return <Message type="info" message={getText('subMessage.sub')} />;
-  }
+  return (
+    <View style={styles.container}>
+      <CreateIcon navigation={navigation} />
+      {notes.length ? (
+        notes.map(note => (
+          <NoteItem key={note.id} note={note} navigation={navigation} />
+        ))
+      ) : (
+        <Message type="info" message={getText('subMessage.sub')} />
+      )}
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: 'center',
-    // alignItems: 'center',
   },
 });
 

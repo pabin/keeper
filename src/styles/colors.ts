@@ -8,6 +8,7 @@ const colors = {
   blueGrey300: '#90A4AE',
   red: '#b33636',
   orange: '#FF6600',
+  white: '#FFFFFF',
 };
 
 export { colors };
