@@ -9,8 +9,32 @@ const CreateNoteScreen = () => {
   const createNote = () => {
     const data = [
       {
-        id: 1234,
-        title: 'this is note title',
+        id: 1,
+        title: 'this is note title 1',
+        details: 'other details',
+        date: new Date(),
+      },
+      {
+        id: 2,
+        title: 'this is note title 2',
+        details: 'other details',
+        date: new Date(),
+      },
+      {
+        id: 3,
+        title: 'this is note title 3',
+        details: 'other details',
+        date: new Date(),
+      },
+      {
+        id: 4,
+        title: 'this is note title 4',
+        details: 'other details',
+        date: new Date(),
+      },
+      {
+        id: 5,
+        title: 'this is note title 5',
         details: 'other details',
         date: new Date(),
       },
@@ -35,7 +59,6 @@ const CreateNoteScreen = () => {
         onChangeText={text => onChangeText(text)}
         value={value}
       />
-      <Button  />
       <Button
         onPress={onPressLearnMore}
         title="Submit Now"
