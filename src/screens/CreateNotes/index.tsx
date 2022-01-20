@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { MarkdownEditor } from 'react-native-markdown-editor';
 
 import { storeObjectData } from '../../model/StorageUtils';
+import { colors } from '../../styles/colors';
 
 const CreateNoteScreen = () => {
-  const [value, onChangeText] = useState('Data here');
+  const [title, setTitle] = useState('');
+  const [body, setBody] = useState('');
 
   const createNote = () => {
     const data = [
@@ -71,30 +74,54 @@ const CreateNoteScreen = () => {
         isFavourite: false,
         isArchived: true,
       },
+      {
+        id: 8,
+        title: 'this is note title 9',
+        body: 'other details',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        isFavourite: false,
+        isArchived: true,
+      },
+      {
+        id: 9,
+        title: 'this is note title 9',
+        body: 'other details',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        isFavourite: false,
+        isArchived: true,
+      },
     ];
 
     storeObjectData('notes', data);
   };
 
   const onPressLearnMore = () => {
-    console.log('on press do nothing...');
     createNote();
   };
 
+  console.log('title:', title);
+  console.log('body:', body);
+
   return (
     <View style={styles.container}>
-      <Text>Add Text</Text>
-      <TextInput
-        multiline
-        numberOfLines={4}
-        editable
-        maxLength={128}
-        onChangeText={text => onChangeText(text)}
-        value={value}
-      />
+      <View style={styles.titleContainer}>
+        <Text style={styles.inputHeader}>Title</Text>
+        <TextInput
+          onChangeText={title => setTitle(title)}
+          style={styles.textInput}
+          placeholder="Note Title"
+          maxLength={20}
+        />
+      </View>
+      <View style={styles.bodyContainer}>
+        <Text style={styles.inputHeader}>Body</Text>
+        <MarkdownEditor onMarkdownChange={body => setBody(body)} showPreview />
+      </View>
       <Button
         onPress={onPressLearnMore}
-        title="Submit Now"
+        title="Add Note"
         color="#841584"
         accessibilityLabel="Learn more"
       />
@@ -105,8 +132,32 @@ const CreateNoteScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    padding: 15,
+  },
+
+  titleContainer: {
+    marginVertical: 10,
+  },
+
+  bodyContainer: {
+    // flex: 1,
+    marginVertical: 10,
+    minHeight: 300,
+  },
+
+  inputHeader: {
+    marginBottom: 5,
+    paddingHorizontal: 5,
+  },
+
+  textInput: {
+    borderWidth: 1,
+    borderRadius: 5,
+    height: 50,
+    fontSize: 16,
+    paddingHorizontal: 10,
+    borderColor: colors.gray,
+    backgroundColor: colors.white,
   },
 });
 

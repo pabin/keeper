@@ -9,6 +9,7 @@ const colors = {
   red: '#b33636',
   orange: '#FF6600',
   white: '#FFFFFF',
+  gray: '#CCCCCC',
 };
 
 export { colors };

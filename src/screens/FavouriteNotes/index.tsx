@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
 
 import { getText } from '../../assets/i18n';
 import Message from '../../components/Message';
@@ -21,12 +21,18 @@ const FavouriteNotesScreen = ({ navigation }) => {
     getDatabase();
   }, []);
 
+  const renderItem = ({ item }) => (
+    <NoteItem key={item.id} note={item} navigation={navigation} />
+  );
+
   return (
     <View style={styles.container}>
       {favouriteNotes.length ? (
-        favouriteNotes.map(note => (
-          <NoteItem key={note.id} note={note} navigation={navigation} />
-        ))
+        <FlatList
+          data={favouriteNotes}
+          renderItem={renderItem}
+          keyExtractor={item => item.id}
+        />
       ) : (
         <Message type="info" message={getText('subMessage.sub')} />
       )}

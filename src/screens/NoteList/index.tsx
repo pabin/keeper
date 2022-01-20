@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
-import { getText } from '../../assets/i18n';
-import Message from '../../components/Message';
+import { FlatList, StyleSheet, View } from 'react-native';
 
+import { getText } from '../../assets/i18n';
 import { getObjectData } from '../../model/StorageUtils';
+
+import Message from '../../components/Message';
 import CreateIcon from './CreateIcon';
 import NoteItem from './NoteItem';
+import { colors } from '../../styles/colors';
 
 const NoteListScreen = ({ navigation }) => {
   const [notes, setNotes] = useState([]);
@@ -22,13 +24,20 @@ const NoteListScreen = ({ navigation }) => {
 
   console.log('notes', notes);
 
+  const renderItem = ({ item }) => (
+    <NoteItem key={item.id} note={item} navigation={navigation} />
+  );
+
   return (
     <View style={styles.container}>
       <CreateIcon navigation={navigation} />
       {notes.length ? (
-        notes.map(note => (
-          <NoteItem key={note.id} note={note} navigation={navigation} />
-        ))
+        <FlatList
+          data={notes}
+          scrollEnabled={true}
+          renderItem={renderItem}
+          keyExtractor={item => item.id}
+        />
       ) : (
         <Message type="info" message={getText('subMessage.sub')} />
       )}
@@ -39,6 +48,7 @@ const NoteListScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: colors.white,
   },
 });
 

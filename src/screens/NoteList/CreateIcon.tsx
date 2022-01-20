@@ -23,11 +23,13 @@ const styles = StyleSheet.create({
     height: 60,
     bottom: 24,
     right: 24,
+    zIndex: 3,
+    elevation: 5,
     borderRadius: 30,
     alignItems: 'center',
     justifyContent: 'center',
     position: 'absolute',
-    backgroundColor: colors.lightBlue900,
+    backgroundColor: colors.orange,
   },
 });
 
