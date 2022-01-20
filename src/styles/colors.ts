@@ -10,6 +10,8 @@ const colors = {
   orange: '#FF6600',
   white: '#FFFFFF',
   gray: '#CCCCCC',
+  gray100: '#D6DBDF',
+  black: '#000',
 };
 
 export { colors };

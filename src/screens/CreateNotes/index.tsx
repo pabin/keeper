@@ -122,7 +122,7 @@ const CreateNoteScreen = () => {
       <Button
         onPress={onPressLearnMore}
         title="Add Note"
-        color="#841584"
+        color={colors.lightBlue900}
         accessibilityLabel="Learn more"
       />
     </View>

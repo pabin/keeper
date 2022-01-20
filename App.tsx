@@ -9,6 +9,7 @@
  */
 
 import React from 'react';
+import Toast from 'react-native-toast-message';
 
 import TabNavigator from './src/navigation/TabNavigation';
 
@@ -16,6 +17,7 @@ const App = () => {
   return (
     <>
       <TabNavigator />
+      <Toast />
     </>
   );
 };

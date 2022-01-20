@@ -3,35 +3,54 @@ import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 
 import { colors } from '../../styles/colors';
+import { formatDate } from '../../utils/dateUtils';
 
 const NoteItem = ({ note, navigation }) => {
   return (
-    <TouchableOpacity
-      style={styles.container}
-      onPress={() => navigation.navigate('NoteDetail', { note })}
-    >
-      <View style={styles.iconContainer}>
-        <Icon name="sticky-note" size={24} color={colors.white} />
-      </View>
-      <View style={styles.noteContainer}>
-        <Text style={styles.text}>{note.title}</Text>
-        <Text style={styles.text}>{note.createdAt}</Text>
-      </View>
-      <Icon name="chevron-right" size={20} color={colors.white} />
-    </TouchableOpacity>
+    <View style={styles.container}>
+      <TouchableOpacity
+        style={styles.touchContainer}
+        onPress={() => navigation.navigate('NoteDetail', { note })}
+      >
+        <View style={styles.iconContainer}>
+          <Icon name="sticky-note" size={24} color={colors.blueGrey500} />
+        </View>
+        <View style={styles.noteContainer}>
+          <Text style={styles.titleText}>{note.title}</Text>
+          <Text style={styles.dateText}>{formatDate(note.createdAt)}</Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('CreateNotes', { note })}
+        style={styles.editIconContainer}
+      >
+        <Icon name="edit" size={22} color={colors.lightBlue900} />
+      </TouchableOpacity>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    padding: 16,
+    flex: 1,
     margin: 12,
-    elevation: 5,
+    elevation: 8,
     marginVertical: 8,
     borderRadius: 12,
     alignItems: 'center',
     flexDirection: 'row',
-    backgroundColor: colors.lightBlue800,
+    backgroundColor: colors.white,
+  },
+
+  touchContainer: {
+    flex: 4,
+    padding: 16,
+    elevation: 8,
+    borderBottomLeftRadius: 12,
+    borderTopLeftRadius: 12,
+    alignItems: 'center',
+    flexDirection: 'row',
+    backgroundColor: colors.gray100,
   },
 
   iconContainer: {
@@ -39,13 +58,23 @@ const styles = StyleSheet.create({
   },
 
   noteContainer: {
-    flex: 3,
+    // flex: 3,
   },
 
-  text: {
+  editIconContainer: {
+    flex: 1,
+    alignItems: 'center',
+  },
+
+  titleText: {
     fontSize: 16,
     fontWeight: '600',
-    color: colors.white,
+    // color: colors.white,
+  },
+
+  dateText: {
+    fontSize: 12,
+    // color: colors.white,
   },
 });
 
