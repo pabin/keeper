@@ -48,7 +48,6 @@ const NoteDetail = ({ route }: NoteDetailRouteProp) => {
       <ScrollView removeClippedSubviews style={styles.body}>
         <MarkdownView style={markdownStyles}>{note.body}</MarkdownView>
       </ScrollView>
-      <MarkdownView style={markdownStyles}>{note.body}</MarkdownView>
       <View style={styles.bottonContainer}>
         <Button
           testID="markFavourite"
