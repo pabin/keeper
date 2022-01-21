@@ -71,6 +71,7 @@
       "!<rootDir>/node_modules/",
       "!<rootDir>index.js",
       "!<rootDir>App.tsx",
+      "!<rootDir>/src/types/**/*",
       "!<rootDir>/src/assets/**/*",
       "!<rootDir>/src/navigation/**/*"
     ],
