@@ -58,7 +58,6 @@ describe('storageUtils', () => {
   });
 
   describe('getStringData', () => {
-
     test('getStringData when exist', async () => {
       const key = 'myData';
       const data = 'My String data';

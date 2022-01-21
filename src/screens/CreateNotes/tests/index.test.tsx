@@ -4,6 +4,7 @@ import { cleanup, render, fireEvent } from '@testing-library/react-native';
 import { note } from '../../../fixtures/notes';
 import { NoteContext } from '../../../../App';
 import CreateNoteScreen from '..';
+import { Note } from '../../../types/note';
 
 describe('CreateNoteScreen', () => {
   afterEach(cleanup);
@@ -15,7 +16,8 @@ describe('CreateNoteScreen', () => {
 
   const onCreateOrUpdateNote = jest.fn();
 
-  const renderComponent = note => {
+  // eslint-disable-next-line @typescript-eslint/no-shadow
+  const renderComponent = (note: Note | undefined) => {
     const route = {
       params: { note },
     };
@@ -56,19 +58,4 @@ describe('CreateNoteScreen', () => {
     );
     expect(navigateMock).toHaveBeenCalledWith('Notes');
   });
-
-  // test('creates note correctly', () => {
-  //   const newNoteTitle = 'New note title';
-
-  //   const { getByTestId } = renderComponent(undefined);
-
-  //   const noteTitle = getByTestId('noteTitle');
-  //   const createNote = getByTestId('createNote');
-
-  //   fireEvent.changeText(noteTitle, newNoteTitle);
-  //   fireEvent.press(createNote);
-
-  //   expect(onCreateOrUpdateNote).toHaveBeenCalledWith(note, newNoteTitle, '');
-  //   expect(navigateMock).toHaveBeenCalledWith('Notes');
-  // });
 });

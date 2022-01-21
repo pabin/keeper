@@ -1,15 +1,23 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
+import { NavigationProp, ParamListBase } from '@react-navigation/native';
 
-import { NoteContext } from '../../../App';
-import { getText } from '../../assets/i18n';
 import Message from '../../components/Message';
 import Spinner from '../../components/Spinner';
 import NoteItem from '../noteList/NoteItem';
 
-const ArchivedNotesScreen = ({ navigation }) => {
-  const [notes, setNotes] = useState([]);
-  const [loading, setLoading] = useState(true);
+import { renderItemProps } from '../noteList';
+import { NoteContext } from '../../../App';
+import { getText } from '../../assets/i18n';
+import { Note } from '../../types/note';
+
+export type ArchivedNotesScreenProps = {
+  navigation: NavigationProp<ParamListBase>;
+};
+
+const ArchivedNotesScreen = ({ navigation }: ArchivedNotesScreenProps) => {
+  const [notes, setNotes] = useState<Note[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
   const { archivedNotes, loading: loadingStatus } = useContext(NoteContext);
 
   useEffect(() => {
@@ -17,7 +25,7 @@ const ArchivedNotesScreen = ({ navigation }) => {
     setLoading(loadingStatus);
   }, [archivedNotes, loadingStatus]);
 
-  const renderItem = ({ item }) => (
+  const renderItem = ({ item }: renderItemProps) => (
     <NoteItem key={item.id} note={item} navigation={navigation} />
   );
 

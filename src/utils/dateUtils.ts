@@ -1,4 +1,4 @@
-const formatDate = (date: string): string => {
+const formatDate = (date: Date): string => {
   const d = new Date(date);
   return `${d.toDateString()} | ${d.toLocaleTimeString()}`;
 };

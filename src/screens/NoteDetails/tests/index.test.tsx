@@ -11,17 +11,18 @@ import {
   notes,
 } from '../../../fixtures/notes';
 import { NoteContext } from '../../../../App';
+import { Note } from '../../../types/note';
 
 describe('NoteDetail', () => {
   afterEach(cleanup);
   const onNoteStatusUpdate = jest.fn();
 
-  const renderComponent = (noteData, notes)=> {
+  const renderComponent = (noteData: Note, notesDate: Note[]) => {
     const route = {
       params: { note: noteData },
     };
     return render(
-      <NoteContext.Provider value={{ notes, onNoteStatusUpdate }}>
+      <NoteContext.Provider value={{ notes: notesDate, onNoteStatusUpdate }}>
         <NoteDetail route={route} />
       </NoteContext.Provider>,
     );

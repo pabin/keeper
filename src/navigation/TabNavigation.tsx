@@ -29,7 +29,8 @@ export default function TabNavigator() {
         },
         tabBarActiveTintColor: colors.lightBlue900,
         tabBarInactiveTintColor: 'gray',
-      })}>
+      })}
+    >
       <Tab.Screen
         name="Notes"
         options={{ title: getText('tabs.notes') }}

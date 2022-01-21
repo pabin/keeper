@@ -9,20 +9,22 @@ import {
 } from './src/model/noteModel';
 import StackNavigator from './src/navigation/StackNavigation';
 import { themes } from './src/styles/colors';
+import { Note } from './src/types/note';
+import { NoteContextInterface } from './src/types/noteContext';
 
-export const NoteContext = React.createContext([]);
+export const NoteContext = React.createContext<NoteContextInterface>([]);
 
-const App = () => {
-  const [loading, setLoading] = useState(true);
-  const [notes, setNotes] = useState([]);
-  const [favouriteNotes, setFavouriteNotes] = useState([]);
-  const [archivedNotes, setArchivedNotes] = useState([]);
+const App = (): JSX.Element => {
+  const [loading, setLoading] = useState<boolean>(true);
+  const [notes, setNotes] = useState<Note[]>([]);
+  const [favouriteNotes, setFavouriteNotes] = useState<Note[]>([]);
+  const [archivedNotes, setArchivedNotes] = useState<Note[]>([]);
 
   // To Do: Theme switch
   const isDarkMode = useColorScheme() === 'dark';
 
   const getDatabase = async () => {
-    const notesData = await getObjectData('notes');
+    const notesData: Note[] = await getObjectData('notes');
 
     if (notesData) {
       const favourites = notesData.filter(n => n.isFavourite);
@@ -38,18 +40,19 @@ const App = () => {
     getDatabase();
   }, []);
 
-  const onNoteStatusUpdate = async (note, action) => {
+  const onNoteStatusUpdate = async (note: Note, action: string) => {
     await updateNoteStatus(note, action);
     await getDatabase();
   };
 
-  const onCreateOrUpdateNote = async (note, title, body) => {
+  const onCreateOrUpdateNote = async (
+    note: Note,
+    title: string,
+    body: string,
+  ) => {
     await createOrUpdateNoteDetails(note, title, body);
     await getDatabase();
   };
-
-  console.log('notes', JSON.stringify(notes));
-
 
   return (
     <>

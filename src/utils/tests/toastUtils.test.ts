@@ -1,5 +1,5 @@
 import Toast from 'react-native-toast-message';
-import { archivedNote, favouriteNote, note } from '../../fixtures/notes';
+import { archivedNote, favouriteNote } from '../../fixtures/notes';
 
 import { getStatusUpdateMessage, showToast } from '../toastUtils';
 

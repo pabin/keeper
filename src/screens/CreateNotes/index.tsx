@@ -1,18 +1,27 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import { MarkdownEditor } from 'react-native-markdown-editor';
+import { RouteProp } from '@react-navigation/native';
+import { NavigationProp, ParamListBase } from '@react-navigation/native';
 
 import { NoteContext } from '../../../App';
 import { getText } from '../../assets/i18n';
 import { colors } from '../../styles/colors';
+import { RootStackParamList } from '../../types/navigation';
 
-const CreateNoteScreen = ({ route, navigation }) => {
+type CreateNoteScreenProps = {
+  route: RouteProp<RootStackParamList, 'CreateNotes'>;
+  navigation: NavigationProp<ParamListBase>;
+};
+
+const CreateNoteScreen = ({
+  route,
+  navigation,
+}: CreateNoteScreenProps): JSX.Element => {
   const note = route.params?.note;
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const { onCreateOrUpdateNote } = useContext(NoteContext);
-
-  // console.log('note', note);
 
   useEffect(() => {
     if (note) {
@@ -27,7 +36,7 @@ const CreateNoteScreen = ({ route, navigation }) => {
         <Text style={styles.inputHeader}>Title</Text>
         <TextInput
           testID="noteTitle"
-          onChangeText={title => setTitle(title)}
+          onChangeText={(nTitle: string) => setTitle(nTitle)}
           style={styles.textInput}
           placeholder={getText('createNote.title')}
           maxLength={64}
@@ -39,7 +48,9 @@ const CreateNoteScreen = ({ route, navigation }) => {
         <MarkdownEditor
           testID="noteBody"
           defaultText={note ? note.body : ''}
-          onMarkdownChange={/* istanbul ignore next */ body => setBody(body)}
+          onMarkdownChange={
+            /* istanbul ignore next */ (nBody: string) => setBody(nBody)
+          }
           showPreview
         />
       </View>

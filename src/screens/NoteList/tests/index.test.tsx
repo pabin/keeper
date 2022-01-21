@@ -4,6 +4,7 @@ import { cleanup, render } from '@testing-library/react-native';
 import NoteListScreen from '../index';
 import { notes } from '../../../fixtures/notes';
 import { NoteContext } from '../../../../App';
+import { Note } from '../../../types/note';
 
 describe('NoteListScreen', () => {
   afterEach(cleanup);
@@ -12,9 +13,9 @@ describe('NoteListScreen', () => {
   const navigation = {
     navigate: navigateMock,
   };
-  const renderComponent = (notes, loading) => {
+  const renderComponent = (notesData: Note[], loading: boolean) => {
     return render(
-      <NoteContext.Provider value={{ notes, loading }}>
+      <NoteContext.Provider value={{ notes: notesData, loading }}>
         <NoteListScreen navigation={navigation} />
       </NoteContext.Provider>,
     );

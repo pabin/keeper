@@ -1,20 +1,27 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Button, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { MarkdownView } from 'react-native-markdown-view';
+import { RouteProp } from '@react-navigation/native';
 
 import { NoteContext } from '../../../App';
 import { getText } from '../../assets/i18n';
 
 import { colors } from '../../styles/colors';
 import { formatDate } from '../../utils/dateUtils';
+import { RootStackParamList } from '../../types/navigation';
+import { Note } from '../../types/note';
 
-const NoteDetail = ({ route }) => {
+type NoteDetailRouteProp = {
+  route: RouteProp<RootStackParamList, 'NoteDetail'>;
+};
+
+const NoteDetail = ({ route }: NoteDetailRouteProp) => {
   const { note: noteData } = route.params;
-  const [note, setNote] = useState();
+  const [note, setNote] = useState<Note>();
   const { notes, onNoteStatusUpdate } = useContext(NoteContext);
 
   useEffect(() => {
-    const myNote = notes.find(n => n.id === noteData.id);
+    const myNote: Note = notes.find(n => n.id === noteData.id);
     setNote(myNote);
   }, [notes, noteData]);
 

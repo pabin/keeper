@@ -1,15 +1,23 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
-import { NoteContext } from '../../../App';
+import { NavigationProp, ParamListBase } from '@react-navigation/native';
 
-import { getText } from '../../assets/i18n';
+import NoteItem from '../noteList/NoteItem';
 import Message from '../../components/Message';
 import Spinner from '../../components/Spinner';
-import NoteItem from '../noteList/NoteItem';
 
-const FavouriteNotesScreen = ({ navigation }) => {
-  const [notes, setNotes] = useState([]);
-  const [loading, setLoading] = useState(true);
+import { getText } from '../../assets/i18n';
+import { Note } from '../../types/note';
+import { renderItemProps } from '../noteList';
+import { NoteContext } from '../../../App';
+
+type FavouriteNotesScreenProps = {
+  navigation: NavigationProp<ParamListBase>;
+};
+
+const FavouriteNotesScreen = ({ navigation }: FavouriteNotesScreenProps) => {
+  const [notes, setNotes] = useState<Note[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
   const { favouriteNotes, loading: laodingStatus } = useContext(NoteContext);
 
@@ -18,7 +26,7 @@ const FavouriteNotesScreen = ({ navigation }) => {
     setLoading(laodingStatus);
   }, [favouriteNotes, laodingStatus]);
 
-  const renderItem = ({ item }) => (
+  const renderItem = ({ item }: renderItemProps) => (
     <NoteItem key={item.id} note={item} navigation={navigation} />
   );
 

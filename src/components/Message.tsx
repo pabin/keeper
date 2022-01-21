@@ -4,7 +4,11 @@ import Icon from 'react-native-vector-icons/dist/FontAwesome';
 
 import { colors } from '../styles/colors';
 
-const Message = ({ message }) => (
+type MessageProps = {
+  message: string;
+};
+
+const Message = ({ message }: MessageProps): JSX.Element => (
   <View style={styles.container}>
     <Icon name="info-circle" size={32} color={colors.blueGrey700} />
     <Text style={styles.textStyle}>{message}</Text>

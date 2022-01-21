@@ -1,10 +1,15 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
+import { NavigationProp, ParamListBase } from '@react-navigation/native';
 
 import { colors } from '../../styles/colors';
 
-const CreateIcon = ({ navigation }) => {
+type CreateIconProps = {
+  navigation: NavigationProp<ParamListBase>;
+};
+
+const CreateIcon = ({ navigation }: CreateIconProps) => {
   return (
     <View style={styles.container}>
       <Icon

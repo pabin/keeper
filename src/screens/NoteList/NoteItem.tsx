@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
+import { NavigationProp, ParamListBase } from '@react-navigation/native';
 
 import { colors } from '../../styles/colors';
+import { Note } from '../../types/note';
 import { formatDate } from '../../utils/dateUtils';
 
-const NoteItem = ({ note, navigation }) => {
+type NoteItemProps = {
+  note: Note;
+  navigation: NavigationProp<ParamListBase>;
+};
+
+const NoteItem = ({ note, navigation }: NoteItemProps) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity

@@ -1,11 +1,12 @@
+import { Note } from './../types/note';
 import { getText } from '../assets/i18n';
 import { getStatusUpdateMessage, showToast } from '../utils/toastUtils';
 import { getObjectData, storeObjectData } from './storageUtils';
 
-const updateNoteStatus = async (note, action) => {
+const updateNoteStatus = async (note: Note, action: string): Promise<void> => {
   const notesData = (await getObjectData('notes')) || [];
   if (notesData.length) {
-    notesData.map(n => {
+    notesData.map((n: Note) => {
       if (n.id === note.id) {
         action === 'favourite'
           ? (n.isFavourite = !n.isFavourite)
@@ -32,11 +33,15 @@ const updateNoteStatus = async (note, action) => {
   }
 };
 
-const createOrUpdateNoteDetails = async (note, title, body) => {
-  const notesData = (await getObjectData('notes')) || [];
+const createOrUpdateNoteDetails = async (
+  note: Note,
+  title: string,
+  body: string,
+): Promise<void> => {
+  const notesData: Note[] = (await getObjectData('notes')) || [];
 
   if (notesData.length && note) {
-    notesData.map(n => {
+    notesData.map((n: Note) => {
       if (note && n.id === note.id) {
         n.title = title;
         n.body = body;
@@ -61,9 +66,9 @@ const createOrUpdateNoteDetails = async (note, title, body) => {
     }
   } else {
     let noteId = 1;
-    notesData.map(n => (noteId <= n.id ? (noteId = n.id + 1) : noteId));
+    notesData.map((n: Note) => (noteId <= n.id ? (noteId = n.id + 1) : noteId));
 
-    const newNote = {
+    const newNote: Note = {
       title,
       body,
       id: noteId,

@@ -4,6 +4,7 @@ import { cleanup, render } from '@testing-library/react-native';
 import FavouriteNotesScreen from '..';
 import { favouriteNotes } from '../../../fixtures/notes';
 import { NoteContext } from '../../../../App';
+import { Note } from '../../../types/note';
 
 describe('FavouriteNotesScreen', () => {
   afterEach(cleanup);
@@ -12,9 +13,9 @@ describe('FavouriteNotesScreen', () => {
   const navigation = {
     navigate: navigateMock,
   };
-  const renderComponent = (favouriteNotes, loading) => {
+  const renderComponent = (notes: Note[], loading: boolean) => {
     return render(
-      <NoteContext.Provider value={{ favouriteNotes, loading }}>
+      <NoteContext.Provider value={{ favouriteNotes: notes, loading }}>
         <FavouriteNotesScreen navigation={navigation} />
       </NoteContext.Provider>,
     );

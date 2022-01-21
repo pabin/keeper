@@ -1,21 +1,21 @@
 import React from 'react';
-import { cleanup, render, fireEvent } from '@testing-library/react-native';
+import { cleanup, render } from '@testing-library/react-native';
 
 import ArchivedNotesScreen from '..';
 import { archivedNotes } from '../../../fixtures/notes';
 import { NoteContext } from '../../../../App';
+import { Note } from '../../../types/note';
 
 describe('ArchivedNotesScreen', () => {
   afterEach(cleanup);
-  // const loading = true;
   const navigateMock = jest.fn();
 
   const navigation = {
     navigate: navigateMock,
   };
-  const renderComponent = (archivedNotes, loading) => {
+  const renderComponent = (notes: Note[], loading: boolean) => {
     return render(
-      <NoteContext.Provider value={{ archivedNotes, loading }}>
+      <NoteContext.Provider value={{ archivedNotes: notes, loading }}>
         <ArchivedNotesScreen navigation={navigation} />
       </NoteContext.Provider>,
     );

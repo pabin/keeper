@@ -3,7 +3,7 @@ import { ActivityIndicator, StyleSheet, View } from 'react-native';
 
 import { colors } from '../styles/colors';
 
-const Spinner = () => {
+const Spinner = (): JSX.Element => {
   return (
     <View style={styles.container}>
       <ActivityIndicator size="small" color={colors.lightBlue900} />
