@@ -33,6 +33,12 @@ const NoteDetail = ({ route }: NoteDetailRouteProp) => {
     );
   }
 
+  const markdownStyles = {
+    text: {
+      color: '#222',
+    },
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.titleContainer}>
@@ -40,8 +46,9 @@ const NoteDetail = ({ route }: NoteDetailRouteProp) => {
         <Text style={styles.postedDate}>{formatDate(note.createdAt)}</Text>
       </View>
       <ScrollView removeClippedSubviews style={styles.body}>
-        <MarkdownView>{note.body}</MarkdownView>
+        <MarkdownView style={markdownStyles}>{note.body}</MarkdownView>
       </ScrollView>
+      <MarkdownView style={markdownStyles}>{note.body}</MarkdownView>
       <View style={styles.bottonContainer}>
         <Button
           testID="markFavourite"
@@ -88,10 +95,12 @@ const styles = StyleSheet.create({
 
   title: {
     fontSize: 18,
+    color: colors.darker,
   },
 
   postedDate: {
     fontSize: 10,
+    color: colors.darker,
   },
 
   body: {

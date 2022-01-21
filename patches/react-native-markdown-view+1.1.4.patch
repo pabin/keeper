@@ -1,0 +1,22 @@
+diff --git a/node_modules/react-native-markdown-view/MarkdownView.js b/node_modules/react-native-markdown-view/MarkdownView.js
+index 238466d..8a360e8 100644
+--- a/node_modules/react-native-markdown-view/MarkdownView.js
++++ b/node_modules/react-native-markdown-view/MarkdownView.js
+@@ -84,9 +84,15 @@ class MarkdownView extends Component {
+   }
+ 
+   render() {
+-    const {rules = {}, styles = {}, onLinkPress} = this.props
++    const markdownStyles = {
++      text: {
++        color: '#222',
++      },
++    };
+ 
+-    const mergedStyles = mergeStyles(DefaultStyles, styles)
++    const {rules = {}, onLinkPress} = this.props
++
++    const mergedStyles = mergeStyles(DefaultStyles, markdownStyles)
+     const mergedRules = mergeRules(SimpleMarkdown.defaultRules, simpleMarkdownRules(mergeRules(DefaultRules, rules), mergedStyles))
+ 
+     const markdown = (Array.isArray(this.props.children) ? this.props.children.join('') : this.props.children) + '\n\n'

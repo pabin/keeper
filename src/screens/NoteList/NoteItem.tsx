@@ -78,12 +78,12 @@ const styles = StyleSheet.create({
   titleText: {
     fontSize: 16,
     fontWeight: '600',
-    // color: colors.white,
+    color: colors.darker,
   },
 
   dateText: {
     fontSize: 12,
-    // color: colors.white,
+    color: colors.darker,
   },
 });
 

@@ -92,6 +92,7 @@ const styles = StyleSheet.create({
   inputHeader: {
     marginBottom: 5,
     paddingHorizontal: 5,
+    color: colors.darker,
   },
 
   textInput: {
@@ -101,6 +102,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     paddingHorizontal: 10,
     borderColor: colors.gray,
+    color: colors.darker,
     backgroundColor: colors.white,
   },
 });

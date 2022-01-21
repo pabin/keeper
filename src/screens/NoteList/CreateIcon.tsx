@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import { NavigationProp, ParamListBase } from '@react-navigation/native';
 
@@ -11,15 +11,13 @@ type CreateIconProps = {
 
 const CreateIcon = ({ navigation }: CreateIconProps) => {
   return (
-    <View style={styles.container}>
-      <Icon
-        testID="createNoteIcon"
-        onPress={() => navigation.navigate('CreateNotes')}
-        name="plus"
-        size={24}
-        color={colors.white}
-      />
-    </View>
+    <TouchableOpacity
+      testID="createNoteIcon"
+      onPress={() => navigation.navigate('CreateNotes')}
+      style={styles.container}
+    >
+      <Icon name="plus" size={24} color={colors.white} />
+    </TouchableOpacity>
   );
 };
 

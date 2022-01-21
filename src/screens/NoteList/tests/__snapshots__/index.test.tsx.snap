@@ -13,6 +13,15 @@ exports[`NoteListScreen renders correctly when no notes are present 1`] = `
   }
 >
   <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Object {
         "alignItems": "center",
@@ -22,16 +31,17 @@ exports[`NoteListScreen renders correctly when no notes are present 1`] = `
         "elevation": 5,
         "height": 60,
         "justifyContent": "center",
+        "opacity": 1,
         "position": "absolute",
         "right": 24,
         "width": 60,
         "zIndex": 3,
       }
     }
+    testID="createNoteIcon"
   >
     <Text
       allowFontScaling={false}
-      onPress={[Function]}
       style={
         Array [
           Object {
@@ -47,7 +57,6 @@ exports[`NoteListScreen renders correctly when no notes are present 1`] = `
           Object {},
         ]
       }
-      testID="createNoteIcon"
     >
       
     </Text>
@@ -90,7 +99,7 @@ exports[`NoteListScreen renders correctly when no notes are present 1`] = `
         }
       }
     >
-      [missing "en-US.subMessage.noNotes" translation]
+      You don't have any notes!
     </Text>
   </View>
 </View>
@@ -109,6 +118,15 @@ exports[`NoteListScreen renders correctly when notes are loaded 1`] = `
   }
 >
   <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Object {
         "alignItems": "center",
@@ -118,16 +136,17 @@ exports[`NoteListScreen renders correctly when notes are loaded 1`] = `
         "elevation": 5,
         "height": 60,
         "justifyContent": "center",
+        "opacity": 1,
         "position": "absolute",
         "right": 24,
         "width": 60,
         "zIndex": 3,
       }
     }
+    testID="createNoteIcon"
   >
     <Text
       allowFontScaling={false}
-      onPress={[Function]}
       style={
         Array [
           Object {
@@ -143,7 +162,6 @@ exports[`NoteListScreen renders correctly when notes are loaded 1`] = `
           Object {},
         ]
       }
-      testID="createNoteIcon"
     >
       
     </Text>
@@ -642,6 +660,15 @@ exports[`NoteListScreen renders correctly when notes are loading 1`] = `
   }
 >
   <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Object {
         "alignItems": "center",
@@ -651,16 +678,17 @@ exports[`NoteListScreen renders correctly when notes are loading 1`] = `
         "elevation": 5,
         "height": 60,
         "justifyContent": "center",
+        "opacity": 1,
         "position": "absolute",
         "right": 24,
         "width": 60,
         "zIndex": 3,
       }
     }
+    testID="createNoteIcon"
   >
     <Text
       allowFontScaling={false}
-      onPress={[Function]}
       style={
         Array [
           Object {
@@ -676,7 +704,6 @@ exports[`NoteListScreen renders correctly when notes are loading 1`] = `
           Object {},
         ]
       }
-      testID="createNoteIcon"
     >
       
     </Text>

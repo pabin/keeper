@@ -2,6 +2,17 @@
 
 exports[`CreateIcon renders correctly 1`] = `
 <View
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
   style={
     Object {
       "alignItems": "center",
@@ -11,16 +22,17 @@ exports[`CreateIcon renders correctly 1`] = `
       "elevation": 5,
       "height": 60,
       "justifyContent": "center",
+      "opacity": 1,
       "position": "absolute",
       "right": 24,
       "width": 60,
       "zIndex": 3,
     }
   }
+  testID="createNoteIcon"
 >
   <Text
     allowFontScaling={false}
-    onPress={[Function]}
     style={
       Array [
         Object {
@@ -36,7 +48,6 @@ exports[`CreateIcon renders correctly 1`] = `
         Object {},
       ]
     }
-    testID="createNoteIcon"
   >
     
   </Text>

@@ -7,6 +7,7 @@ import {
   createOrUpdateNoteDetails,
   updateNoteStatus,
 } from './src/model/noteModel';
+
 import StackNavigator from './src/navigation/StackNavigation';
 import { themes } from './src/styles/colors';
 import { Note } from './src/types/note';
