@@ -2,17 +2,34 @@ import * as React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import CreateNoteScreen from '../screens/CreateNotes';
-import NoteListScreen from '../screens/NoteList';
 import NoteDetail from '../screens/NoteDetails';
+import TabNavigator from './TabNavigation';
+import { getText } from '../assets/i18n';
 
 const Stack = createStackNavigator();
 
 export default function StackNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Notes" component={NoteListScreen} />
-      <Stack.Screen name="CreateNotes" component={CreateNoteScreen} />
-      <Stack.Screen name="NoteDetail" component={NoteDetail} />
+      <Stack.Screen
+        name="NoteList"
+        component={TabNavigator}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="CreateNotes"
+        options={({ route }) => ({
+          title: route.params?.note
+            ? getText('stack.update')
+            : getText('stack.create'),
+        })}
+        component={CreateNoteScreen}
+      />
+      <Stack.Screen
+        name="NoteDetail"
+        options={{ title: getText('stack.detail') }}
+        component={NoteDetail}
+      />
     </Stack.Navigator>
   );
 }

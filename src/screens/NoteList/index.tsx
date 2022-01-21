@@ -1,28 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 
 import { getText } from '../../assets/i18n';
-import { getObjectData } from '../../model/StorageUtils';
+import { getObjectData } from '../../model/storageUtils';
 
 import Message from '../../components/Message';
 import CreateIcon from './CreateIcon';
 import NoteItem from './NoteItem';
 import { colors } from '../../styles/colors';
+import { NoteContext } from '../../../App';
+import Spinner from '../../components/Spinner';
 
 const NoteListScreen = ({ navigation }) => {
-  const [notes, setNotes] = useState([]);
-  const getDatabase = async () => {
-    const notesData = await getObjectData('notes');
-    if (notesData) {
-      setNotes(notesData);
-    }
-  };
+  const [allNotes, setNotes] = useState([]);
+  const { notes, loading } = useContext(NoteContext);
 
   useEffect(() => {
-    getDatabase();
-  }, []);
-
-  console.log('notes', notes);
+    setNotes(notes);
+  }, [notes]);
 
   const renderItem = ({ item }) => (
     <NoteItem key={item.id} note={item} navigation={navigation} />
@@ -31,15 +26,17 @@ const NoteListScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <CreateIcon navigation={navigation} />
-      {notes.length ? (
+      {allNotes.length ? (
         <FlatList
           data={notes}
           scrollEnabled={true}
           renderItem={renderItem}
           keyExtractor={item => item.id}
         />
+      ) : !allNotes.length && loading ? (
+        <Spinner />
       ) : (
-        <Message type="info" message={getText('subMessage.sub')} />
+        <Message message={getText('subMessage.noNotes')} />
       )}
     </View>
   );
@@ -48,7 +45,13 @@ const NoteListScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: 'center',
     backgroundColor: colors.white,
+  },
+
+  loader: {
+    flex: 1,
+    justifyContent: 'center',
   },
 });
 

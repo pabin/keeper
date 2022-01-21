@@ -1,8 +1,55 @@
 {
-  "mainMessage": "Coming soon...",
-  "message": "No notes found",
-  "subMessage": {
-      "sub": "Text Here french"
+  "tabs": {
+    "notes": "Remarques",
+    "favourite": "Favorite",
+    "archived": "archivé"
+  },
+  "stack": {
+    "create": "Créer une note",
+    "update": "Note de mise à jour",
+    "detail": "Détail de la note"
+  },
+  "noteList": {
+    "noNotes": "Vous n'avez aucune note!"
+  },
+  "favouriteList": {
+    "noNotes": "Vous n'avez pas de notes favorites!"
+  },
+  "archiveList": {
+    "noNotes": "Vous n'avez aucune note archivée!"
+  },
+  "createNote": {
+    "title": "Titre de la remarque",
+    "createText": "Créer une note",
+    "updateText": "Note de mise à jour"
+  },
+  "noteDetail": {
+    "markFavourite": "Marquer comme favori",
+    "removeFavourite": "Supprimer des favoris",
+    "markArchived": "Marquer comme archivé",
+    "removeArchived": "Supprimer des archives"
+  },
+  "toast": {
+    "created": {
+      "title1": "Remarque créée",
+      "title2": "Créé avec succès"
+    },
+    "updated": {
+      "title1": "Remarque mise à jour",
+      "title2": "Mis à jour avec succés"
+    },
+    "errUpdate": {
+      "title1": "Erreur!",
+      "title2": "Erreur lors de la mise à jour"
+    },
+    "errCreate": {
+      "title1": "Erreur!",
+      "title2": "Erreur lors de la création"
+    },
+    "marked": "marqué comme",
+    "removed": "retiré de",
+    "favourite": "favori avec succès!",
+    "archived": "archivé avec succès!"
   }
-}
+  }
 

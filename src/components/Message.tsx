@@ -1,38 +1,27 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Icon from 'react-native-vector-icons/dist/FontAwesome';
+
 import { colors } from '../styles/colors';
 
-const Message = ({ type, message }) => {
-  const getMessageTheme = (msgType: string) => {
-    if (msgType === 'warning') {
-      return {
-        backgroundColor: colors.red,
-      };
-    } else if (msgType === 'info') {
-      return {
-        backgroundColor: colors.lightBlue800,
-      };
-    }
-  };
-
-  return (
-    <View style={[styles.container, getMessageTheme(type)]}>
-      <Text style={styles.textStyle}>{message}</Text>
-    </View>
-  );
-};
+const Message = ({ message }) => (
+  <View style={styles.container}>
+    <Icon name="info-circle" size={32} color={colors.blueGrey700} />
+    <Text style={styles.textStyle}>{message}</Text>
+  </View>
+);
 
 const styles = StyleSheet.create({
   container: {
-    padding: 8,
-    margin: 8,
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colors.blueGrey300,
   },
 
   textStyle: {
-    color: 'white',
     fontSize: 18,
+    marginVertical: 12,
+    color: colors.blueGrey700,
   },
 });
 

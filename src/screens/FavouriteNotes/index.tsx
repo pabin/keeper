@@ -1,25 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
+import { NoteContext } from '../../../App';
 
 import { getText } from '../../assets/i18n';
 import Message from '../../components/Message';
-import { getObjectData } from '../../model/StorageUtils';
+import Spinner from '../../components/Spinner';
 import NoteItem from '../NoteList/NoteItem';
 
 const FavouriteNotesScreen = ({ navigation }) => {
-  const [favouriteNotes, setFavouriteNotes] = useState([]);
+  const [notes, setNotes] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const getDatabase = async () => {
-    const notesData = await getObjectData('notes');
-    if (notesData) {
-      const favourites = notesData.filter(note => note.isFavourite);
-      setFavouriteNotes(favourites);
-    }
-  };
+  const { favouriteNotes, loading: laodingStatus } = useContext(NoteContext);
 
   useEffect(() => {
-    getDatabase();
-  }, []);
+    setNotes(favouriteNotes);
+    setLoading(laodingStatus);
+  }, [favouriteNotes, laodingStatus]);
 
   const renderItem = ({ item }) => (
     <NoteItem key={item.id} note={item} navigation={navigation} />
@@ -27,14 +24,17 @@ const FavouriteNotesScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      {favouriteNotes.length ? (
+      {notes.length ? (
         <FlatList
-          data={favouriteNotes}
+          data={notes}
+          scrollEnabled={true}
           renderItem={renderItem}
           keyExtractor={item => item.id}
         />
+      ) : !notes.length && loading ? (
+        <Spinner />
       ) : (
-        <Message type="info" message={getText('subMessage.sub')} />
+        <Message message={getText('favouriteList.noNotes')} />
       )}
     </View>
   );

@@ -1,8 +1,55 @@
 {
-    "mainMessage": "Coming soon...",
-    "message": "No notes found",
-    "subMessage": {
-        "sub": "Text Here 2"
-    }
+  "tabs": {
+    "notes": "Notes",
+    "favourite": "Favourite",
+    "archived": "Archived"
+  },
+  "stack": {
+    "create": "Create Note",
+    "update": "Update Note",
+    "detail": "Note Detail"
+  },
+  "noteList": {
+    "noNotes": "You don't have any notes!"
+  },
+  "favouriteList": {
+    "noNotes": "You don't have any favourite notes!"
+  },
+  "archiveList": {
+    "noNotes": "You don't have any archived notes!"
+  },
+  "createNote": {
+    "title": "Note Title",
+    "createText": "Create Note",
+    "updateText": "Update Note"
+  },
+  "noteDetail": {
+    "markFavourite": "Mark as Favourite",
+    "removeFavourite": "Remove from Favourite",
+    "markArchived": "Mark as Archived",
+    "removeArchived": "Remove from Archived"
+  },
+  "toast": {
+    "created": {
+      "title1": "Note Created",
+      "title2": "Created successfully"
+    },
+    "updated": {
+      "title1": "Note Updated",
+      "title2": "Updated successfully"
+    },
+    "errUpdate": {
+      "title1": "Error!",
+      "title2": "Error while updating"
+    },
+    "errCreate": {
+      "title1": "Error!",
+      "title2": "Error while creating"
+    },
+    "marked": "marked as",
+    "removed": "removed from",
+    "favourite": "favourite successfully!",
+    "archived": "archived successfully!"
+  }
   }
 

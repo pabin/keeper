@@ -1,25 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 
+import { NoteContext } from '../../../App';
 import { getText } from '../../assets/i18n';
 import Message from '../../components/Message';
-import { getObjectData } from '../../model/StorageUtils';
+import Spinner from '../../components/Spinner';
 import NoteItem from '../NoteList/NoteItem';
 
 const ArchivedNotesScreen = ({ navigation }) => {
-  const [archivedNotes, setArchivedNotes] = useState([]);
-
-  const getDatabase = async () => {
-    const notesData = await getObjectData('notes');
-    if (notesData) {
-      const archived = notesData.filter(note => note.isArchived);
-      setArchivedNotes(archived);
-    }
-  };
+  const [notes, setNotes] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const { archivedNotes, loading: loadingStatus } = useContext(NoteContext);
 
   useEffect(() => {
-    getDatabase();
-  }, []);
+    setNotes(archivedNotes);
+    setLoading(loadingStatus);
+  }, [archivedNotes, loadingStatus]);
 
   const renderItem = ({ item }) => (
     <NoteItem key={item.id} note={item} navigation={navigation} />
@@ -27,14 +23,17 @@ const ArchivedNotesScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      {archivedNotes.length ? (
+      {notes.length ? (
         <FlatList
-          data={archivedNotes}
+          data={notes}
+          scrollEnabled={true}
           renderItem={renderItem}
           keyExtractor={item => item.id}
         />
+      ) : !notes.length && loading ? (
+        <Spinner />
       ) : (
-        <Message type="info" message={getText('subMessage.sub')} />
+        <Message message={getText('archiveList.noNotes')} />
       )}
     </View>
   );

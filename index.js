@@ -1,6 +1,3 @@
-/**
- * @format
- */
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { AppRegistry, StatusBar, useColorScheme } from 'react-native';

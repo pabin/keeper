@@ -1,108 +1,22 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import { MarkdownEditor } from 'react-native-markdown-editor';
 
-import { storeObjectData } from '../../model/StorageUtils';
+import { NoteContext } from '../../../App';
+import { getText } from '../../assets/i18n';
 import { colors } from '../../styles/colors';
 
-const CreateNoteScreen = () => {
+const CreateNoteScreen = ({ route, navigation }) => {
+  const note = route.params?.note;
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
+  const { onCreateOrUpdateNote } = useContext(NoteContext);
 
-  const createNote = () => {
-    const data = [
-      {
-        id: 1,
-        title: 'this is note title 1',
-        body: 'other details',
-        createdAt: new Date(),
-        updatedAt: new Date(),
-        isFavourite: true,
-        isArchived: false,
-      },
-      {
-        id: 2,
-        title: 'this is note title 2',
-        body: 'other details',
-        createdAt: new Date(),
-        updatedAt: new Date(),
-        isFavourite: false,
-        isArchived: true,
-      },
-      {
-        id: 3,
-        title: 'this is note title 3',
-        body: 'other details',
-        createdAt: new Date(),
-        updatedAt: new Date(),
-        isFavourite: true,
-        isArchived: true,
-      },
-      {
-        id: 4,
-        title: 'this is note title 4',
-        body: 'other details',
-        createdAt: new Date(),
-        updatedAt: new Date(),
-        isFavourite: false,
-        isArchived: true,
-      },
-      {
-        id: 5,
-        title: 'this is note title 5',
-        body: 'other details',
-        createdAt: new Date(),
-        updatedAt: new Date(),
-        isFavourite: false,
-        isArchived: true,
-      },
-      {
-        id: 6,
-        title: 'this is note title 6',
-        body: 'other details',
-        createdAt: new Date(),
-        updatedAt: new Date(),
-        isFavourite: true,
-        isArchived: false,
-      },
-      {
-        id: 7,
-        title: 'this is note title 7',
-        body: 'other details',
-        createdAt: new Date(),
-        updatedAt: new Date(),
-        isFavourite: false,
-        isArchived: true,
-      },
-      {
-        id: 8,
-        title: 'this is note title 9',
-        body: 'other details',
-        createdAt: new Date(),
-        updatedAt: new Date(),
-        isFavourite: false,
-        isArchived: true,
-      },
-      {
-        id: 9,
-        title: 'this is note title 9',
-        body: 'other details',
-        createdAt: new Date(),
-        updatedAt: new Date(),
-        isFavourite: false,
-        isArchived: true,
-      },
-    ];
-
-    storeObjectData('notes', data);
-  };
-
-  const onPressLearnMore = () => {
-    createNote();
-  };
-
-  console.log('title:', title);
-  console.log('body:', body);
+  useEffect(() => {
+    if (note) {
+      setTitle(note.title);
+    }
+  }, [note]);
 
   return (
     <View style={styles.container}>
@@ -111,19 +25,32 @@ const CreateNoteScreen = () => {
         <TextInput
           onChangeText={title => setTitle(title)}
           style={styles.textInput}
-          placeholder="Note Title"
-          maxLength={20}
+          placeholder={getText('createNote.title')}
+          maxLength={64}
+          value={title}
         />
       </View>
       <View style={styles.bodyContainer}>
         <Text style={styles.inputHeader}>Body</Text>
-        <MarkdownEditor onMarkdownChange={body => setBody(body)} showPreview />
+        <MarkdownEditor
+          defaultText={note ? note.body : ''}
+          onMarkdownChange={body => setBody(body)}
+          showPreview
+        />
       </View>
       <Button
-        onPress={onPressLearnMore}
-        title="Add Note"
+        onPress={() => {
+          onCreateOrUpdateNote(note, title, body);
+          navigation.navigate('Notes');
+        }}
+        title={
+          note
+            ? getText('createNote.updateText')
+            : getText('createNote.createText')
+        }
         color={colors.lightBlue900}
         accessibilityLabel="Learn more"
+        disabled={title ? false : true}
       />
     </View>
   );

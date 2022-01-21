@@ -1,41 +1,30 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Button, ScrollView, StyleSheet, Text, View } from 'react-native';
-
 import { MarkdownView } from 'react-native-markdown-view';
-// import Icon from 'react-native-vector-icons/dist/FontAwesome';
-import Toast from 'react-native-toast-message';
-import { getObjectData } from '../../model/StorageUtils';
+
+import { NoteContext } from '../../../App';
+import { getText } from '../../assets/i18n';
 
 import { colors } from '../../styles/colors';
 import { formatDate } from '../../utils/dateUtils';
 
 const NoteDetail = ({ route }) => {
-  const { note } = route.params;
+  const { note: noteData } = route.params;
+  const [note, setNote] = useState();
+  const { notes, onNoteStatusUpdate } = useContext(NoteContext);
 
-  const showToast = (type: string, text1: string, text2: string) => {
-    Toast.show({ type, text1, text2, position: 'bottom' });
-  };
+  useEffect(() => {
+    const myNote = notes.find(n => n.id === noteData.id);
+    setNote(myNote);
+  }, [notes, noteData]);
 
-  const markAsFavouriteOrArchive = async action => {
-    const notesData = await getObjectData('notes');
-    if (notesData) {
-      notesData.map(n => {
-        if (n.id === note.id) {
-          action === 'favourite'
-            ? (n.isFavourite = true)
-            : (n.isARchived = true);
-          n.updatedAt = new Date();
-        }
-      });
-      showToast(
-        'success',
-        'Note Updated',
-        `${note.title} marked as ${
-          action === 'favourite' ? 'favourite' : 'archived'
-        } successfully!`,
-      );
-    }
-  };
+  if (!note) {
+    return (
+      <View>
+        <Text>no data</Text>
+      </View>
+    );
+  }
 
   return (
     <View style={styles.container}>
@@ -48,9 +37,11 @@ const NoteDetail = ({ route }) => {
       </ScrollView>
       <View style={styles.bottonContainer}>
         <Button
-          onPress={() => markAsFavouriteOrArchive('favourite')}
+          onPress={() => onNoteStatusUpdate(note, 'favourite')}
           title={`${
-            note.isFavourite ? 'Remove from Favourite' : 'Mark as Favourite'
+            note.isFavourite
+              ? getText('noteDetail.removeFavourite')
+              : getText('noteDetail.markFavourite')
           }`}
           color={colors.lightBlue900}
           accessibilityLabel="Learn more"
@@ -58,9 +49,11 @@ const NoteDetail = ({ route }) => {
       </View>
       <View style={styles.bottonContainer}>
         <Button
-          onPress={() => markAsFavouriteOrArchive('archive')}
+          onPress={() => onNoteStatusUpdate(note, 'archive')}
           title={`${
-            note.isArchived ? 'Remove from Archived' : 'Mark as Archived'
+            note.isArchived
+              ? getText('noteDetail.removeArchived')
+              : getText('noteDetail.markArchived')
           }`}
           color={colors.blueGrey500}
           accessibilityLabel="Learn more"
@@ -104,22 +97,6 @@ const styles = StyleSheet.create({
 
   bottonContainer: {
     paddingVertical: 12,
-  },
-
-  markdownStyles: {
-    // heading1: {
-    //   fontSize: 24,
-    //   color: 'purple',
-    // },
-    // link: {
-    //   color: 'pink',
-    // },
-    // mailTo: {
-    //   color: 'orange',
-    // },
-    // text: {
-    //   color: '#555555',
-    // },
   },
 });
 
