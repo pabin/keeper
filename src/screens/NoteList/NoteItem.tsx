@@ -1,5 +1,11 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
+import {
+  Platform,
+  StyleSheet,
+  TouchableOpacity,
+  Text,
+  View,
+} from 'react-native';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import { NavigationProp, ParamListBase } from '@react-navigation/native';
 
@@ -23,7 +29,7 @@ const NoteItem = ({ note, navigation }: NoteItemProps) => {
         <View style={styles.iconContainer}>
           <Icon name="sticky-note" size={24} color={colors.blueGrey500} />
         </View>
-        <View style={styles.noteContainer}>
+        <View>
           <Text style={styles.titleText}>{note.title}</Text>
           <Text style={styles.dateText}>{formatDate(note.createdAt)}</Text>
         </View>
@@ -43,31 +49,45 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     margin: 12,
-    elevation: 8,
     marginVertical: 8,
     borderRadius: 12,
     alignItems: 'center',
     flexDirection: 'row',
     backgroundColor: colors.white,
+    ...Platform.select({
+      ios: {
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 6 },
+        shadowOpacity: 0.2,
+      },
+      android: {
+        elevation: 8,
+      },
+    }),
   },
 
   touchContainer: {
     flex: 4,
     padding: 16,
-    elevation: 8,
     borderBottomLeftRadius: 12,
     borderTopLeftRadius: 12,
     alignItems: 'center',
     flexDirection: 'row',
     backgroundColor: colors.gray100,
+    ...Platform.select({
+      ios: {
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 6 },
+        shadowOpacity: 0.1,
+      },
+      android: {
+        elevation: 4,
+      },
+    }),
   },
 
   iconContainer: {
     marginRight: 12,
-  },
-
-  noteContainer: {
-    // flex: 3,
   },
 
   editIconContainer: {

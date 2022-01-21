@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { Platform, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import { NavigationProp, ParamListBase } from '@react-navigation/native';
 
@@ -28,12 +28,21 @@ const styles = StyleSheet.create({
     bottom: 24,
     right: 24,
     zIndex: 3,
-    elevation: 5,
     borderRadius: 30,
     alignItems: 'center',
     justifyContent: 'center',
     position: 'absolute',
     backgroundColor: colors.lightBlue900,
+    ...Platform.select({
+      ios: {
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.4,
+      },
+      android: {
+        elevation: 6,
+      },
+    }),
   },
 });
 

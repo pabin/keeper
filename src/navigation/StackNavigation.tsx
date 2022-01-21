@@ -14,7 +14,7 @@ export default function StackNavigator() {
       <Stack.Screen
         name="NoteList"
         component={TabNavigator}
-        options={{ headerShown: false }}
+        options={{ headerShown: false, title: getText('tabs.notes') }}
       />
       <Stack.Screen
         name="CreateNotes"

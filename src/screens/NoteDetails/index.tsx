@@ -1,5 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Button, ScrollView, StyleSheet, Text, View } from 'react-native';
+import {
+  Button,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import { MarkdownView } from 'react-native-markdown-view';
 import { RouteProp } from '@react-navigation/native';
 
@@ -86,10 +93,19 @@ const styles = StyleSheet.create({
   titleContainer: {
     margin: 1,
     padding: 12,
-    elevation: 5,
     borderRadius: 5,
     backgroundColor: colors.white,
     borderBottomColor: colors.blueGrey900,
+    ...Platform.select({
+      ios: {
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.2,
+      },
+      android: {
+        elevation: 5,
+      },
+    }),
   },
 
   title: {
@@ -104,12 +120,21 @@ const styles = StyleSheet.create({
 
   body: {
     padding: 12,
-    elevation: 5,
     minHeight: 350,
     borderRadius: 5,
     marginVertical: 8,
     backgroundColor: colors.white,
     borderBottomColor: colors.blueGrey900,
+    ...Platform.select({
+      ios: {
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.4,
+      },
+      android: {
+        elevation: 5,
+      },
+    }),
   },
 
   bottonContainer: {
