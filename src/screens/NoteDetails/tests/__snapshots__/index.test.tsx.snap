@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoteDetail renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "margin": 16,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderBottomColor": "#263238",
+        "borderRadius": 5,
+        "elevation": 5,
+        "margin": 1,
+        "padding": 12,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontSize": 18,
+        }
+      }
+    >
+      note title
+    </Text>
+    <Text
+      style={
+        Object {
+          "fontSize": 10,
+        }
+      }
+    >
+      Fri Jan 21 2022 | 11:34:45 AM
+    </Text>
+  </View>
+  <RCTScrollView
+    removeClippedSubviews={true}
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderBottomColor": "#263238",
+        "borderRadius": 5,
+        "elevation": 5,
+        "marginVertical": 8,
+        "minHeight": 350,
+        "padding": 12,
+      }
+    }
+  >
+    <View />
+  </RCTScrollView>
+  <View
+    style={
+      Object {
+        "paddingVertical": 12,
+      }
+    }
+  >
+    <View
+      accessibilityLabel="Learn more"
+      accessibilityRole="button"
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      nativeID="animatedComponent"
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID="markFavourite"
+    >
+      <View
+        style={
+          Array [
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#007AFF",
+                "fontSize": 18,
+                "margin": 8,
+                "textAlign": "center",
+              },
+              Object {
+                "color": "#01579B",
+              },
+            ]
+          }
+        >
+          Mark as Favourite
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "paddingVertical": 12,
+      }
+    }
+  >
+    <View
+      accessibilityLabel="Learn more"
+      accessibilityRole="button"
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      nativeID="animatedComponent"
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID="markArchived"
+    >
+      <View
+        style={
+          Array [
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#007AFF",
+                "fontSize": 18,
+                "margin": 8,
+                "textAlign": "center",
+              },
+              Object {
+                "color": "#607D8B",
+              },
+            ]
+          }
+        >
+          Mark as Archived
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

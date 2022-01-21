@@ -37,6 +37,7 @@ const NoteDetail = ({ route }) => {
       </ScrollView>
       <View style={styles.bottonContainer}>
         <Button
+          testID="markFavourite"
           onPress={() => onNoteStatusUpdate(note, 'favourite')}
           title={`${
             note.isFavourite
@@ -49,6 +50,7 @@ const NoteDetail = ({ route }) => {
       </View>
       <View style={styles.bottonContainer}>
         <Button
+          testID="markArchived"
           onPress={() => onNoteStatusUpdate(note, 'archive')}
           title={`${
             note.isArchived

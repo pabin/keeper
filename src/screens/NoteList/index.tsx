@@ -23,7 +23,7 @@ const NoteListScreen = ({ navigation }) => {
   );
 
   return (
-    <View style={[styles.container, { backgroundColor: theme.background}]}>
+    <View style={[styles.container]}>
       <CreateIcon navigation={navigation} />
       {allNotes.length ? (
         <FlatList

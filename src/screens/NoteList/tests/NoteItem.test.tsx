@@ -2,7 +2,7 @@ import React from 'react';
 import { cleanup, render, fireEvent } from '@testing-library/react-native';
 
 import NoteItem from '../NoteItem';
-import { note } from '../../../fixtures/note';
+import { note } from '../../../fixtures/notes';
 
 describe('NoteItem', () => {
   afterEach(cleanup);
