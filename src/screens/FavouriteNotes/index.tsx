@@ -5,7 +5,7 @@ import { NoteContext } from '../../../App';
 import { getText } from '../../assets/i18n';
 import Message from '../../components/Message';
 import Spinner from '../../components/Spinner';
-import NoteItem from '../NoteList/NoteItem';
+import NoteItem from '../noteList/NoteItem';
 
 const FavouriteNotesScreen = ({ navigation }) => {
   const [notes, setNotes] = useState([]);

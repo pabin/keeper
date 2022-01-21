@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import CreateNoteScreen from '../screens/CreateNotes';
-import NoteDetail from '../screens/NoteDetails';
+import CreateNoteScreen from '../screens/createNotes';
+import NoteDetail from '../screens/noteDetails';
 import TabNavigator from './TabNavigation';
 import { getText } from '../assets/i18n';
 

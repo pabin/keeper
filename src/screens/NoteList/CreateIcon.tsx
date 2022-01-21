@@ -8,6 +8,7 @@ const CreateIcon = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Icon
+        testID="createNoteIcon"
         onPress={() => navigation.navigate('CreateNotes')}
         name="plus"
         size={24}

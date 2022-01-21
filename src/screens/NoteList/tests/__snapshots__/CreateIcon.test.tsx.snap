@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateIcon renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#01579B",
+      "borderRadius": 30,
+      "bottom": 24,
+      "elevation": 5,
+      "height": 60,
+      "justifyContent": "center",
+      "position": "absolute",
+      "right": 24,
+      "width": 60,
+      "zIndex": 3,
+    }
+  }
+>
+  <Text
+    allowFontScaling={false}
+    onPress={[Function]}
+    style={
+      Array [
+        Object {
+          "color": "#FFFFFF",
+          "fontSize": 24,
+        },
+        undefined,
+        Object {
+          "fontFamily": "FontAwesome",
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+        },
+        Object {},
+      ]
+    }
+    testID="createNoteIcon"
+  >
+    
+  </Text>
+</View>
+`;

@@ -58,3 +58,9 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+
+# Jest coverage report
+coverage/
+
+# VS Code
+.vscode/

@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { useColorScheme } from 'react-native';
 import Toast from 'react-native-toast-message';
 
 import { getObjectData } from './src/model/storageUtils';
-import { createOrUpdateNoteDetails, updateNoteStatus } from './src/model/updateModel';
+import {
+  createOrUpdateNoteDetails,
+  updateNoteStatus,
+} from './src/model/updateModel';
 import StackNavigator from './src/navigation/StackNavigation';
+import { themes } from './src/styles/colors';
 
 export const NoteContext = React.createContext([]);
 
@@ -12,6 +17,9 @@ const App = () => {
   const [notes, setNotes] = useState([]);
   const [favouriteNotes, setFavouriteNotes] = useState([]);
   const [archivedNotes, setArchivedNotes] = useState([]);
+
+  // To Do: Theme switch
+  const isDarkMode = useColorScheme() === 'dark';
 
   const getDatabase = async () => {
     const notesData = await getObjectData('notes');
@@ -40,6 +48,9 @@ const App = () => {
     await getDatabase();
   };
 
+  console.log('notes', JSON.stringify(notes));
+
+
   return (
     <>
       <NoteContext.Provider
@@ -50,6 +61,7 @@ const App = () => {
           archivedNotes,
           onNoteStatusUpdate,
           onCreateOrUpdateNote,
+          theme: isDarkMode ? themes.dark : themes.light,
         }}
       >
         <StackNavigator />

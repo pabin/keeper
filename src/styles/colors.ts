@@ -12,6 +12,19 @@ const colors = {
   gray: '#CCCCCC',
   gray100: '#D6DBDF',
   black: '#000',
+  darker: '#222',
+  lighter: '#F3F3F3',
 };
 
-export { colors };
+const themes = {
+  light: {
+    foreground: '#000000',
+    background: '#eeeeee',
+  },
+  dark: {
+    foreground: '#ffffff',
+    background: '#222222',
+  },
+};
+
+export { colors, themes };

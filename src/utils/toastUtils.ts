@@ -1,4 +1,5 @@
 import Toast from 'react-native-toast-message';
+
 import { getText } from '../assets/i18n';
 
 const showToast = (type: string, text1: string, text2: string) => {

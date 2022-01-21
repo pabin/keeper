@@ -1,19 +1,18 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 
-import { getText } from '../../assets/i18n';
-import { getObjectData } from '../../model/storageUtils';
-
 import Message from '../../components/Message';
 import CreateIcon from './CreateIcon';
 import NoteItem from './NoteItem';
+import Spinner from '../../components/Spinner';
+
 import { colors } from '../../styles/colors';
 import { NoteContext } from '../../../App';
-import Spinner from '../../components/Spinner';
+import { getText } from '../../assets/i18n';
 
 const NoteListScreen = ({ navigation }) => {
   const [allNotes, setNotes] = useState([]);
-  const { notes, loading } = useContext(NoteContext);
+  const { notes, loading, theme } = useContext(NoteContext);
 
   useEffect(() => {
     setNotes(notes);
@@ -24,7 +23,7 @@ const NoteListScreen = ({ navigation }) => {
   );
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: theme.background}]}>
       <CreateIcon navigation={navigation} />
       {allNotes.length ? (
         <FlatList

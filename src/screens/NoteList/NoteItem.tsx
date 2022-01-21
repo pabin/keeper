@@ -9,6 +9,7 @@ const NoteItem = ({ note, navigation }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity
+        testID="detailNavigator"
         style={styles.touchContainer}
         onPress={() => navigation.navigate('NoteDetail', { note })}
       >
@@ -21,6 +22,7 @@ const NoteItem = ({ note, navigation }) => {
         </View>
       </TouchableOpacity>
       <TouchableOpacity
+        testID="createNoteNavigator"
         onPress={() => navigation.navigate('CreateNotes', { note })}
         style={styles.editIconContainer}
       >
