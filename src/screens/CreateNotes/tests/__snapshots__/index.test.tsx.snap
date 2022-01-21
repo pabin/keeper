@@ -19,6 +19,7 @@ exports[`CreateNoteScreen renders correctly in create mode 1`] = `
     <Text
       style={
         Object {
+          "color": "#222",
           "marginBottom": 5,
           "paddingHorizontal": 5,
         }
@@ -36,6 +37,7 @@ exports[`CreateNoteScreen renders correctly in create mode 1`] = `
           "borderColor": "#CCCCCC",
           "borderRadius": 5,
           "borderWidth": 1,
+          "color": "#222",
           "fontSize": 16,
           "height": 50,
           "paddingHorizontal": 10,
@@ -56,6 +58,7 @@ exports[`CreateNoteScreen renders correctly in create mode 1`] = `
     <Text
       style={
         Object {
+          "color": "#222",
           "marginBottom": 5,
           "paddingHorizontal": 5,
         }
@@ -143,6 +146,7 @@ exports[`CreateNoteScreen renders correctly in edit mode 1`] = `
     <Text
       style={
         Object {
+          "color": "#222",
           "marginBottom": 5,
           "paddingHorizontal": 5,
         }
@@ -160,6 +164,7 @@ exports[`CreateNoteScreen renders correctly in edit mode 1`] = `
           "borderColor": "#CCCCCC",
           "borderRadius": 5,
           "borderWidth": 1,
+          "color": "#222",
           "fontSize": 16,
           "height": 50,
           "paddingHorizontal": 10,
@@ -180,6 +185,7 @@ exports[`CreateNoteScreen renders correctly in edit mode 1`] = `
     <Text
       style={
         Object {
+          "color": "#222",
           "marginBottom": 5,
           "paddingHorizontal": 5,
         }

@@ -71,11 +71,16 @@ exports[`ArchivedNotesScreen renders correctly when archived notes are loaded 1`
               "alignItems": "center",
               "backgroundColor": "#FFFFFF",
               "borderRadius": 12,
-              "elevation": 8,
               "flex": 1,
               "flexDirection": "row",
               "margin": 12,
               "marginVertical": 8,
+              "shadowColor": "#000",
+              "shadowOffset": Object {
+                "height": 6,
+                "width": 0,
+              },
+              "shadowOpacity": 0.2,
             }
           }
         >
@@ -97,11 +102,16 @@ exports[`ArchivedNotesScreen renders correctly when archived notes are loaded 1`
                 "backgroundColor": "#D6DBDF",
                 "borderBottomLeftRadius": 12,
                 "borderTopLeftRadius": 12,
-                "elevation": 8,
                 "flex": 4,
                 "flexDirection": "row",
                 "opacity": 1,
                 "padding": 16,
+                "shadowColor": "#000",
+                "shadowOffset": Object {
+                  "height": 6,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.1,
               }
             }
             testID="detailNavigator"
@@ -134,12 +144,11 @@ exports[`ArchivedNotesScreen renders correctly when archived notes are loaded 1`
                 
               </Text>
             </View>
-            <View
-              style={Object {}}
-            >
+            <View>
               <Text
                 style={
                   Object {
+                    "color": "#222",
                     "fontSize": 16,
                     "fontWeight": "600",
                   }
@@ -150,6 +159,7 @@ exports[`ArchivedNotesScreen renders correctly when archived notes are loaded 1`
               <Text
                 style={
                   Object {
+                    "color": "#222",
                     "fontSize": 12,
                   }
                 }
@@ -212,11 +222,16 @@ exports[`ArchivedNotesScreen renders correctly when archived notes are loaded 1`
               "alignItems": "center",
               "backgroundColor": "#FFFFFF",
               "borderRadius": 12,
-              "elevation": 8,
               "flex": 1,
               "flexDirection": "row",
               "margin": 12,
               "marginVertical": 8,
+              "shadowColor": "#000",
+              "shadowOffset": Object {
+                "height": 6,
+                "width": 0,
+              },
+              "shadowOpacity": 0.2,
             }
           }
         >
@@ -238,11 +253,16 @@ exports[`ArchivedNotesScreen renders correctly when archived notes are loaded 1`
                 "backgroundColor": "#D6DBDF",
                 "borderBottomLeftRadius": 12,
                 "borderTopLeftRadius": 12,
-                "elevation": 8,
                 "flex": 4,
                 "flexDirection": "row",
                 "opacity": 1,
                 "padding": 16,
+                "shadowColor": "#000",
+                "shadowOffset": Object {
+                  "height": 6,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.1,
               }
             }
             testID="detailNavigator"
@@ -275,12 +295,11 @@ exports[`ArchivedNotesScreen renders correctly when archived notes are loaded 1`
                 
               </Text>
             </View>
-            <View
-              style={Object {}}
-            >
+            <View>
               <Text
                 style={
                   Object {
+                    "color": "#222",
                     "fontSize": 16,
                     "fontWeight": "600",
                   }
@@ -291,6 +310,7 @@ exports[`ArchivedNotesScreen renders correctly when archived notes are loaded 1`
               <Text
                 style={
                   Object {
+                    "color": "#222",
                     "fontSize": 12,
                   }
                 }
@@ -353,11 +373,16 @@ exports[`ArchivedNotesScreen renders correctly when archived notes are loaded 1`
               "alignItems": "center",
               "backgroundColor": "#FFFFFF",
               "borderRadius": 12,
-              "elevation": 8,
               "flex": 1,
               "flexDirection": "row",
               "margin": 12,
               "marginVertical": 8,
+              "shadowColor": "#000",
+              "shadowOffset": Object {
+                "height": 6,
+                "width": 0,
+              },
+              "shadowOpacity": 0.2,
             }
           }
         >
@@ -379,11 +404,16 @@ exports[`ArchivedNotesScreen renders correctly when archived notes are loaded 1`
                 "backgroundColor": "#D6DBDF",
                 "borderBottomLeftRadius": 12,
                 "borderTopLeftRadius": 12,
-                "elevation": 8,
                 "flex": 4,
                 "flexDirection": "row",
                 "opacity": 1,
                 "padding": 16,
+                "shadowColor": "#000",
+                "shadowOffset": Object {
+                  "height": 6,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.1,
               }
             }
             testID="detailNavigator"
@@ -416,12 +446,11 @@ exports[`ArchivedNotesScreen renders correctly when archived notes are loaded 1`
                 
               </Text>
             </View>
-            <View
-              style={Object {}}
-            >
+            <View>
               <Text
                 style={
                   Object {
+                    "color": "#222",
                     "fontSize": 16,
                     "fontWeight": "600",
                   }
@@ -432,6 +461,7 @@ exports[`ArchivedNotesScreen renders correctly when archived notes are loaded 1`
               <Text
                 style={
                   Object {
+                    "color": "#222",
                     "fontSize": 12,
                   }
                 }

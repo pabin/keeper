@@ -14,15 +14,21 @@ exports[`NoteDetail renders correctly 1`] = `
         "backgroundColor": "#FFFFFF",
         "borderBottomColor": "#263238",
         "borderRadius": 5,
-        "elevation": 5,
         "margin": 1,
         "padding": 12,
+        "shadowColor": "#000",
+        "shadowOffset": Object {
+          "height": 4,
+          "width": 0,
+        },
+        "shadowOpacity": 0.2,
       }
     }
   >
     <Text
       style={
         Object {
+          "color": "#222",
           "fontSize": 18,
         }
       }
@@ -32,6 +38,7 @@ exports[`NoteDetail renders correctly 1`] = `
     <Text
       style={
         Object {
+          "color": "#222",
           "fontSize": 10,
         }
       }
@@ -46,10 +53,15 @@ exports[`NoteDetail renders correctly 1`] = `
         "backgroundColor": "#FFFFFF",
         "borderBottomColor": "#263238",
         "borderRadius": 5,
-        "elevation": 5,
         "marginVertical": 8,
         "minHeight": 350,
         "padding": 12,
+        "shadowColor": "#000",
+        "shadowOffset": Object {
+          "height": 4,
+          "width": 0,
+        },
+        "shadowOpacity": 0.4,
       }
     }
   >

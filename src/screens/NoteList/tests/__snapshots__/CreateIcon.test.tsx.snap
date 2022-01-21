@@ -19,12 +19,17 @@ exports[`CreateIcon renders correctly 1`] = `
       "backgroundColor": "#01579B",
       "borderRadius": 30,
       "bottom": 24,
-      "elevation": 5,
       "height": 60,
       "justifyContent": "center",
       "opacity": 1,
       "position": "absolute",
       "right": 24,
+      "shadowColor": "#000",
+      "shadowOffset": Object {
+        "height": 4,
+        "width": 0,
+      },
+      "shadowOpacity": 0.4,
       "width": 60,
       "zIndex": 3,
     }
