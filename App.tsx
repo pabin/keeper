@@ -24,14 +24,16 @@ const App = (): JSX.Element => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const getDatabase = async () => {
-    const notesData: Note[] = await getObjectData('notes');
-
-    if (notesData) {
-      const favourites = notesData.filter(n => n.isFavourite);
-      const archived = notesData.filter(n => n.isArchived);
-      setNotes(notesData);
-      setArchivedNotes(archived);
-      setFavouriteNotes(favourites);
+    try {
+      const notesData: Note[] = await getObjectData('notes');
+      if (notesData) {
+        const favourites = notesData.filter(n => n.isFavourite);
+        const archived = notesData.filter(n => n.isArchived);
+        setNotes(notesData);
+        setArchivedNotes(archived);
+        setFavouriteNotes(favourites);
+      }
+    } finally {
       setLoading(false);
     }
   };

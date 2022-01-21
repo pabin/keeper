@@ -45,7 +45,7 @@ const NoteListScreen = ({ navigation }: NoteListProps): JSX.Element => {
       ) : !allNotes.length && loading ? (
         <Spinner />
       ) : (
-        <Message message={getText('subMessage.noNotes')} />
+        <Message message={getText('noteList.noNotes')} />
       )}
     </View>
   );
