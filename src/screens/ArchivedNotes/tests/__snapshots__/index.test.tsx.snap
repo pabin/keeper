@@ -14,32 +14,32 @@ exports[`ArchivedNotesScreen renders correctly when archived notes are loaded 1`
         Object {
           "body": "**this is test note**
 \`this is new lne\`",
-          "createdAt": "2022-01-21T05:49:45.613Z",
+          "createdAt": 2022-01-21T05:49:45.613Z,
           "id": 100,
           "isArchived": true,
           "isFavourite": false,
           "title": "note title",
-          "updatedAt": "2022-01-21T05:52:58.634Z",
+          "updatedAt": 2022-01-21T05:52:58.634Z,
         },
         Object {
           "body": "**this is test note 2**
 \`this is new lne\`",
-          "createdAt": "2022-01-22T05:49:45.613Z",
+          "createdAt": 2022-01-21T05:49:45.613Z,
           "id": 101,
           "isArchived": true,
           "isFavourite": false,
           "title": "note title 2",
-          "updatedAt": "2022-01-22T05:52:58.634Z",
+          "updatedAt": 2022-01-21T05:52:58.634Z,
         },
         Object {
           "body": "**this is test note 3**
 \`this is new lne\`",
-          "createdAt": "2022-01-22T05:49:45.613Z",
+          "createdAt": 2022-01-21T05:49:45.613Z,
           "id": 102,
           "isArchived": true,
           "isFavourite": false,
           "title": "note title 3",
-          "updatedAt": "2022-01-22T05:52:58.634Z",
+          "updatedAt": 2022-01-21T05:52:58.634Z,
         },
       ]
     }
@@ -295,7 +295,7 @@ exports[`ArchivedNotesScreen renders correctly when archived notes are loaded 1`
                   }
                 }
               >
-                Sat Jan 22 2022 | 11:34:45 AM
+                Fri Jan 21 2022 | 11:34:45 AM
               </Text>
             </View>
           </View>
@@ -436,7 +436,7 @@ exports[`ArchivedNotesScreen renders correctly when archived notes are loaded 1`
                   }
                 }
               >
-                Sat Jan 22 2022 | 11:34:45 AM
+                Fri Jan 21 2022 | 11:34:45 AM
               </Text>
             </View>
           </View>
