@@ -8,6 +8,7 @@
     "start": "react-native start",
     "test": "jest --coverage",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "pod:install": "pod install --project-directory=ios",
     "prepare": "patch-package"
   },
   "dependencies": {

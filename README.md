@@ -14,6 +14,7 @@ Project repository for Keeper mobile application
 
 ```
 yarn
+yarn pod:install
 yarn start
 yarn android or yarn ios
 ```
