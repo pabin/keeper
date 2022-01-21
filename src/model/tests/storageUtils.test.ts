@@ -5,7 +5,7 @@ import {
   getStringData,
   storeObjectData,
   storeStringData,
-} from '../storageUtils';
+} from '../asyncStorageUtils';
 
 describe('storageUtils', () => {
   beforeEach(() => {

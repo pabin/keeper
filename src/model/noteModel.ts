@@ -1,7 +1,7 @@
 import { Note } from './../types/note';
 import { getText } from '../assets/i18n';
 import { getStatusUpdateMessage, showToast } from '../utils/toastUtils';
-import { getObjectData, storeObjectData } from './storageUtils';
+import { getObjectData, storeObjectData } from './asyncStorageUtils';
 
 const updateNoteStatus = async (note: Note, action: string): Promise<void> => {
   const notesData = (await getObjectData('notes')) || [];

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useColorScheme } from 'react-native';
 import Toast from 'react-native-toast-message';
 
-import { getObjectData } from './src/model/storageUtils';
+import { getObjectData } from './src/model/asyncStorageUtils';
 import {
   createOrUpdateNoteDetails,
   updateNoteStatus,
