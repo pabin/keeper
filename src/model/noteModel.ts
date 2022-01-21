@@ -4,7 +4,7 @@ import { getObjectData, storeObjectData } from './storageUtils';
 
 const updateNoteStatus = async (note, action) => {
   const notesData = (await getObjectData('notes')) || [];
-  if (notesData) {
+  if (notesData.length) {
     notesData.map(n => {
       if (n.id === note.id) {
         action === 'favourite'
@@ -22,6 +22,7 @@ const updateNoteStatus = async (note, action) => {
         `${note.title} ${getStatusUpdateMessage(action, note)}`,
       );
     } catch (err) {
+      /* istanbul ignore next */
       showToast(
         'error',
         getText('toast.errUpdate.title1'),
@@ -34,7 +35,7 @@ const updateNoteStatus = async (note, action) => {
 const createOrUpdateNoteDetails = async (note, title, body) => {
   const notesData = (await getObjectData('notes')) || [];
 
-  if (notesData && note) {
+  if (notesData.length && note) {
     notesData.map(n => {
       if (note && n.id === note.id) {
         n.title = title;
@@ -51,6 +52,7 @@ const createOrUpdateNoteDetails = async (note, title, body) => {
         `${note.title} ${getText('toast.updated.title2')}`,
       );
     } catch (err) {
+      /* istanbul ignore next */
       showToast(
         'error',
         getText('toast.errUpdate.title1'),
@@ -80,6 +82,7 @@ const createOrUpdateNoteDetails = async (note, title, body) => {
         `${title} ${getText('toast.created.title2')}`,
       );
     } catch (err) {
+      /* istanbul ignore next */
       showToast(
         'error',
         getText('toast.errCreate.title1'),

@@ -12,9 +12,12 @@ const CreateNoteScreen = ({ route, navigation }) => {
   const [body, setBody] = useState('');
   const { onCreateOrUpdateNote } = useContext(NoteContext);
 
+  // console.log('note', note);
+
   useEffect(() => {
     if (note) {
       setTitle(note.title);
+      setBody(note.body);
     }
   }, [note]);
 
@@ -23,6 +26,7 @@ const CreateNoteScreen = ({ route, navigation }) => {
       <View style={styles.titleContainer}>
         <Text style={styles.inputHeader}>Title</Text>
         <TextInput
+          testID="noteTitle"
           onChangeText={title => setTitle(title)}
           style={styles.textInput}
           placeholder={getText('createNote.title')}
@@ -33,12 +37,14 @@ const CreateNoteScreen = ({ route, navigation }) => {
       <View style={styles.bodyContainer}>
         <Text style={styles.inputHeader}>Body</Text>
         <MarkdownEditor
+          testID="noteBody"
           defaultText={note ? note.body : ''}
-          onMarkdownChange={body => setBody(body)}
+          onMarkdownChange={/* istanbul ignore next */ body => setBody(body)}
           showPreview
         />
       </View>
       <Button
+        testID="createNote"
         onPress={() => {
           onCreateOrUpdateNote(note, title, body);
           navigation.navigate('Notes');

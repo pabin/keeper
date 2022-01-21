@@ -6,7 +6,7 @@ import { getObjectData } from './src/model/storageUtils';
 import {
   createOrUpdateNoteDetails,
   updateNoteStatus,
-} from './src/model/updateModel';
+} from './src/model/noteModel';
 import StackNavigator from './src/navigation/StackNavigation';
 import { themes } from './src/styles/colors';
 

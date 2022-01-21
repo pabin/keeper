@@ -55,6 +55,9 @@
       "\\.(jpg|jpeg|png|svg)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|scss)$": "identity-obj-proxy"
     },
+    "setupFiles": [
+      "<rootDir>/__mocks__/jest-setup.js"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",
@@ -67,7 +70,9 @@
       "src/**/*.{js,jsx,ts,tsx}",
       "!<rootDir>/node_modules/",
       "!<rootDir>index.js",
-      "!<rootDir>/src/assets/**/*"
+      "!<rootDir>App.tsx",
+      "!<rootDir>/src/assets/**/*",
+      "!<rootDir>/src/navigation/**/*"
     ],
     "coverageThreshold": {
       "global": {

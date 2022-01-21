@@ -1,0 +1,243 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateNoteScreen renders correctly in create mode 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "padding": 15,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "marginVertical": 10,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "marginBottom": 5,
+          "paddingHorizontal": 5,
+        }
+      }
+    >
+      Title
+    </Text>
+    <TextInput
+      maxLength={64}
+      onChangeText={[Function]}
+      placeholder="Note Title"
+      style={
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "#CCCCCC",
+          "borderRadius": 5,
+          "borderWidth": 1,
+          "fontSize": 16,
+          "height": 50,
+          "paddingHorizontal": 10,
+        }
+      }
+      testID="noteTitle"
+      value=""
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "marginVertical": 10,
+        "minHeight": 300,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "marginBottom": 5,
+          "paddingHorizontal": 5,
+        }
+      }
+    >
+      Body
+    </Text>
+  </View>
+  <View
+    accessibilityLabel="Learn more"
+    accessibilityRole="button"
+    accessibilityState={
+      Object {
+        "disabled": true,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    nativeID="animatedComponent"
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID="createNote"
+  >
+    <View
+      style={
+        Array [
+          Object {},
+          Object {},
+        ]
+      }
+    >
+      <Text
+        disabled={true}
+        style={
+          Array [
+            Object {
+              "color": "#007AFF",
+              "fontSize": 18,
+              "margin": 8,
+              "textAlign": "center",
+            },
+            Object {
+              "color": "#01579B",
+            },
+            Object {
+              "color": "#cdcdcd",
+            },
+          ]
+        }
+      >
+        Create Note
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`CreateNoteScreen renders correctly in edit mode 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "padding": 15,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "marginVertical": 10,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "marginBottom": 5,
+          "paddingHorizontal": 5,
+        }
+      }
+    >
+      Title
+    </Text>
+    <TextInput
+      maxLength={64}
+      onChangeText={[Function]}
+      placeholder="Note Title"
+      style={
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "#CCCCCC",
+          "borderRadius": 5,
+          "borderWidth": 1,
+          "fontSize": 16,
+          "height": 50,
+          "paddingHorizontal": 10,
+        }
+      }
+      testID="noteTitle"
+      value="note title"
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "marginVertical": 10,
+        "minHeight": 300,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "marginBottom": 5,
+          "paddingHorizontal": 5,
+        }
+      }
+    >
+      Body
+    </Text>
+  </View>
+  <View
+    accessibilityLabel="Learn more"
+    accessibilityRole="button"
+    accessibilityState={
+      Object {
+        "disabled": false,
+      }
+    }
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID="createNote"
+  >
+    <View
+      style={
+        Array [
+          Object {},
+        ]
+      }
+    >
+      <Text
+        disabled={false}
+        style={
+          Array [
+            Object {
+              "color": "#007AFF",
+              "fontSize": 18,
+              "margin": 8,
+              "textAlign": "center",
+            },
+            Object {
+              "color": "#01579B",
+            },
+          ]
+        }
+      >
+        Update Note
+      </Text>
+    </View>
+  </View>
+</View>
+`;

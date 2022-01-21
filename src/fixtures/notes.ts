@@ -21,7 +21,7 @@ const note2 = {
 const note3 = {
   title: 'note title 3',
   body: '**this is test note 3**\n`this is new lne`',
-  id: 101,
+  id: 102,
   isFavourite: false,
   isArchived: false,
   createdAt: '2022-01-22T05:49:45.613Z',
@@ -38,8 +38,8 @@ const archivedNote3 = { ...note3, isArchived: true };
 
 const notes = [note, note2, note3];
 
-const archivedNotes = [favouriteNote, favouriteNote2, favouriteNote3];
-const favouriteNotes = [archivedNote, archivedNote2, archivedNote3];
+const favouriteNotes = [favouriteNote, favouriteNote2, favouriteNote3];
+const archivedNotes = [archivedNote, archivedNote2, archivedNote3];
 
 export {
   note,

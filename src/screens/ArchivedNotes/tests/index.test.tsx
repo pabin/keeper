@@ -1,7 +1,7 @@
 import React from 'react';
 import { cleanup, render, fireEvent } from '@testing-library/react-native';
 
-import ArchivedNotesScreen from '../index';
+import ArchivedNotesScreen from '..';
 import { archivedNotes } from '../../../fixtures/notes';
 import { NoteContext } from '../../../../App';
 

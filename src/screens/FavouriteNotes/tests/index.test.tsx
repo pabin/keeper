@@ -1,7 +1,7 @@
 import React from 'react';
 import { cleanup, render } from '@testing-library/react-native';
 
-import FavouriteNotesScreen from '../index';
+import FavouriteNotesScreen from '..';
 import { favouriteNotes } from '../../../fixtures/notes';
 import { NoteContext } from '../../../../App';
 
