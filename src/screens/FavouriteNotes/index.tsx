@@ -2,13 +2,13 @@ import React, { useContext, useEffect, useState } from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 import { NavigationProp, ParamListBase } from '@react-navigation/native';
 
-import NoteItem from '../noteList/NoteItem';
+import NoteItem from '../NoteList/NoteItem';
 import Message from '../../components/Message';
 import Spinner from '../../components/Spinner';
 
 import { getText } from '../../assets/i18n';
 import { Note } from '../../types/note';
-import { renderItemProps } from '../noteList';
+import { renderItemProps } from '../NoteList';
 import { NoteContext } from '../../../App';
 
 type FavouriteNotesScreenProps = {

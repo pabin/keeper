@@ -4,9 +4,9 @@ import { NavigationProp, ParamListBase } from '@react-navigation/native';
 
 import Message from '../../components/Message';
 import Spinner from '../../components/Spinner';
-import NoteItem from '../noteList/NoteItem';
+import NoteItem from '../NoteList/NoteItem';
 
-import { renderItemProps } from '../noteList';
+import { renderItemProps } from '../NoteList';
 import { NoteContext } from '../../../App';
 import { getText } from '../../assets/i18n';
 import { Note } from '../../types/note';
