@@ -1,6 +1,3 @@
-# Keeper
-Project repository for Keeper mobile application
-
 ## Setting up
 
 - node/npm:
@@ -19,26 +16,12 @@ yarn start
 yarn android or yarn ios
 ```
 
-## Style
-
-### Running the linter
+### Running the linter and test
 
 ```
 yarn lint
-```
-
-### Running the Test
-
-```
 yarn test
 ```
-
-## Created with React Native CLI Typescript Boilerplate
-
-- [Typescript](https://www.typescriptlang.org/)
-- Linting with [ESLint](https://eslint.org/)
-- Formatting with [Prettier](https://prettier.io/)
-- Testing with [Jest](https://jestjs.io/)
 
 ## Screenshots
 ![ScreenShot](https://github.com/pabin/keeper/blob/main/src/assets/screenshots/Note%20List%20Screen.png?raw=true)
