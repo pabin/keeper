@@ -1,3 +1,7 @@
+## Description
+A client side note taking application built with react-native. Supported platforms are android and ios
+
+
 ## Setting up
 
 - node/npm:
